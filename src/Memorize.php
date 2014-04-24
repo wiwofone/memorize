@@ -61,7 +61,8 @@ class Memorize
         }
         
         $newFactor = $oldFactor+(0.1-(5-$quality)*(0.08+(5-$quality)*0.02));
-        return $newFactor > 1.3 ? $newFactor : 1.3;
+        
+        return $newFactor > 1.3 ? ($newFactor < 2.5 ? $newFactor : 2.5) : 1.3;
     }
 
 }

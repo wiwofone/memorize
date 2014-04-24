@@ -37,7 +37,6 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('float', $mem->calcInterval());
     } 
     
-    
     /**
      * Quality should not be able to be higher than 6.
      * 
@@ -73,11 +72,21 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * A response of quality 4 should not change the factor
+     * A factor of 2.5 with response quality 5 should generate a factor of 2.6.
+     * However, 2.5 should always be the maximum factor.
+     */
+    public function testFactorMaximum()
+    {
+        $mem = new Memorize();
+        $this->assertEquals(2.5, $mem->calcNewFactor(2.5,5));
+    }
+    
+    /**
+     * A response of quality 4 should not change a factor between 1.3 and 2.5.
      */
     public function testQuality4() {
         $mem = new Memorize();
-        $oldFactor = rand();
+        $oldFactor = rand(13,25)/10;
         $this->assertEquals($oldFactor,$mem->calcNewFactor($oldFactor,4));
     }
     
