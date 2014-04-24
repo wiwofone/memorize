@@ -1,4 +1,7 @@
 # Memorize
+
+[![Build Status](https://travis-ci.org/wiwofone/memorize.svg?branch=master)](https://travis-ci.org/wiwofone/memorize)
+
 *A PHP implementation of the SM-2 algorithm.*
 
 ## Features
