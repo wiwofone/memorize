@@ -20,7 +20,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      * 1 repetition should always give interval = 1, 2 should give 6 and a test
      * case on 3 with E-factor 2.5 should arithmetically give 15.
      */
-    public function testCases()
+    public function testIntervalCases()
     {
         $mem = new Memorize();
         $this->assertEquals(1, $mem->calcInterval(1, rand()));
