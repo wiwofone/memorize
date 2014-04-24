@@ -32,9 +32,9 @@ class Memorize
             throw new \RangeException('The number of repetitions must be 1 or higher');
         }
         
-        if ($time == 1) {
+        if($time == 1) {
             $interval = 1;
-        } elseif ($time == 2) {
+        } elseif($time == 2) {
             $interval = 6;
         } else {
             $interval = self::calcInterval($time - 1, $factor) * $factor;
