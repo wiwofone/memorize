@@ -20,9 +20,10 @@ Memorize is installed through [Composer](http://getcomposer.org/doc/00-intro.md)
 ```
 
 ## The algorithm
+SM is a family of algorithms made popular by the SuperMemo software package. The Memorize class implements two parts of the [SM-2 algorithm](http://www.supermemo.com/english/ol/sm2.htm) in PHP: a method to calculate intervals in which an item should be repeated, and what E-factor the item should have after being answered with a certain quality.
 
 ## Testing
-Run PHPUnit with `phpunit`.
+Run PHPUnit with `$ phpunit` in the root directory.
 
 ## Author
 * Shahin Zarrabi - shahin@wiwo.se - [@wiwofone](http://twitter.com/wiwofone) - http://www.wiwo.se
