@@ -16,6 +16,8 @@ Memorize is installed through [Composer](http://getcomposer.org/doc/00-intro.md)
 }
 ```
 
+## The algorithm
+
 ## Testing
 Run PHPUnit with `phpunit`.
 
