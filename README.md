@@ -14,7 +14,7 @@ Memorize is installed through [Composer](http://getcomposer.org/doc/00-intro.md)
 ```js
 {
     "require": {
-    	"wiwofone/memorize": "1.0"
+    	"wiwofone/memorize": "1.*"
 	}
 }
 ```
