@@ -4,6 +4,9 @@
 
 *A PHP implementation of the SM-2 algorithm.*
 
+## About
+This is a library created by me to try out popular tools such as Travis, Packagist and Composer, as well as enhancing my understanding of test driven development. While being a test project for me, the library is still completely usable and could be used by any database of questions and answers to implement spaced repetition in an application.
+
 ## Features
 * Calculate the interval in which to repeat an item after the n:th repetition based on an E-factor.
 * Calculate an E-factor for an item based on the old factor (or no factor) and a response quality.
