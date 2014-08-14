@@ -30,18 +30,3 @@ class CardQueue extends \SplPriorityQueue
     }
     
 }
-
-require_once('Card.php');
-require_once('Memorize.php');
-
-$queue = new CardQueue();
-$card = new Card();
-$card2 = new Card();
-$card2->setNextTime(14080573180);
-$queue->insert($card, 1);
-$queue->insert($card2, 1);
-
-foreach($queue as $card) {
-    echo json_encode($card);
-    echo "<br>";
-}
