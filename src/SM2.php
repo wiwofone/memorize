@@ -1,6 +1,6 @@
 <?php
 /**
- * Memorize
+ * Memorize SM2 implementation
  *
  * A PHP implementation of the SM-2 algorithm.
  * Algorithm SM-2, © Copyright SuperMemo World, 1991.
