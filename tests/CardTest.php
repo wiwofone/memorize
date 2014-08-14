@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
  
-use Memorize\Memorize;
+use Memorize\SM2;
 use Memorize\Card;
 
 class CardTest extends \PHPUnit_Framework_TestCase
@@ -21,7 +21,7 @@ class CardTest extends \PHPUnit_Framework_TestCase
     public function testGoodRepeat()
     {
         $card = new Card();
-        $memorize = new Memorize();
+        $memorize = new SM2();
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
@@ -36,7 +36,7 @@ class CardTest extends \PHPUnit_Framework_TestCase
     public function testBadRepeat()
     {
         $card = new Card();
-        $memorize = new Memorize();
+        $memorize = new SM2();
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(0,2));

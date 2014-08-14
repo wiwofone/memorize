@@ -148,13 +148,13 @@ class Card implements \JsonSerializable
     /**
      * Repeat the card
      * 
-     * This method takes an instance of Memorize and a quality factor to update
+     * This method takes an instance of SM2 and a quality factor to update
      * the flash card accordingly after a repetition.
      * 
-     * @param \Memorize\Memorize  $memorize   An instance of a Memorize object
-     * @param int                 $quality    The quality of the answer
+     * @param \Memorize\SM2 $memorize   An instance of an SM2 object
+     * @param int           $quality    The quality of the answer
      */
-    public function repeat($memorize, $quality)
+    public function repeat($SM2, $quality)
     {
         if ($quality >= 3) {
             $this->numberOfRepeats++;
@@ -162,10 +162,10 @@ class Card implements \JsonSerializable
             $this->numberOfRepeats = 1;
         }
                 
-        $newFactor = $memorize->calcNewFactor($this->factor, $quality);
+        $newFactor = $SM2->calcNewFactor($this->factor, $quality);
         $this->factor = $newFactor;
         
-        $interval = $memorize->calcInterval($this->numberOfRepeats, $newFactor);
+        $interval = $SM2->calcInterval($this->numberOfRepeats, $newFactor);
         $this->nextTime = time() + $interval*24*60*60;
     }
     

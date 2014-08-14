@@ -15,7 +15,7 @@
  
 namespace Memorize;
  
-class Memorize
+class SM2
 {
 
     /**

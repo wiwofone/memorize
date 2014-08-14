@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
  
-use Memorize\Memorize;
+use Memorize\SM2;
 
 class MemorizeTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +21,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTooFewTimes()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $mem->calcInterval(0);
     } 
     
@@ -31,7 +31,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testIntervalCases()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $this->assertEquals(1, $mem->calcInterval(1, rand()));
         $this->assertEquals(6, $mem->calcInterval(2, rand()));
         $this->assertEquals(15, $mem->calcInterval(3,2.5));
@@ -42,7 +42,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testIntervalIsFloat()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $this->assertInternalType('float', $mem->calcInterval());
     } 
     
@@ -54,7 +54,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testQualityTooHigh()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $mem->calcNewFactor(2.5,6);
     } 
     
@@ -66,7 +66,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testQualityTooLow()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $mem->calcNewFactor(2.5,-1);
     } 
     
@@ -76,7 +76,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testFactorMinimum()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $this->assertEquals(1.3, $mem->calcNewFactor(1.4,1));
     }
     
@@ -86,7 +86,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      */
     public function testFactorMaximum()
     {
-        $mem = new Memorize();
+        $mem = new SM2();
         $this->assertEquals(2.5, $mem->calcNewFactor(2.5,5));
     }
     
@@ -94,7 +94,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      * A response of quality 4 should not change a factor between 1.3 and 2.5.
      */
     public function testQuality4() {
-        $mem = new Memorize();
+        $mem = new SM2();
         $oldFactor = rand(13,25)/10;
         $this->assertEquals($oldFactor,$mem->calcNewFactor($oldFactor,4));
     }
@@ -103,7 +103,7 @@ class MemorizeTest extends \PHPUnit_Framework_TestCase
      * calcNewFactor should always return a float.
      */
     public function testFactorIsFloat() {
-        $mem = new Memorize();
+        $mem = new SM2();
         $this->assertInternalType('float', $mem->calcNewFactor());
     } 
 }
