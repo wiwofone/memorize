@@ -25,7 +25,7 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
-        $this->assertEquals(3, $card->numberOfRepeats);
+        $this->assertEquals(3, $card->getNumberOfRepeats());
     }
     
     /**
@@ -40,7 +40,7 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(3,5));
         $card->repeat($memorize, rand(0,2));
-        $this->assertEquals(1, $card->numberOfRepeats);
+        $this->assertEquals(1, $card->getNumberOfRepeats());
     }
     
 }
