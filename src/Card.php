@@ -126,7 +126,7 @@ class Card implements \JsonSerializable
     }
     
     /**
-     * Set next repetition occurence (UNIX timestamp)
+     * Set next repetition occurrence (UNIX timestamp)
      * @param int $nextTime
      * @return \Memorize\Card
      */
@@ -137,7 +137,7 @@ class Card implements \JsonSerializable
     }
     
     /**
-     * Get next repetition occurence (UNIX timestamp)
+     * Get next repetition occurrence (UNIX timestamp)
      * @return int
      */
     public function getNextTime()
