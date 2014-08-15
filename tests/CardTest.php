@@ -42,6 +42,9 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, $card->getNumberOfRepeats());
     }
     
+    /**
+     * Create a card from JSON and make sure it's correct.
+     */
     public function testFromJson()
     {
         $json = json_encode(array(
@@ -61,6 +64,9 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(123, $card->getNextTime());
     }
     
+    /**
+     * Create a card, encode it in JSON, and then create a new Card from the same JSON.
+     */
     public function testJsonSwitcharoo()
     {
         $card = new Card('What is your name?', 'Peter');
@@ -69,6 +75,9 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('What is your name?', $newCard->getQuestion());
     }
     
+    /**
+     * Create a card from an array and make sure it's correct.
+     */
     public function testFromArray()
     {
         $array = array(
@@ -87,7 +96,10 @@ class CardTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2.4, $card->getFactor());
         $this->assertEquals(123, $card->getNextTime());        
     }
-    
+
+    /**
+     * Create a card, convert it to an array, and then create a new Card from the array.
+     */
     public function testArraySwitcharoo()
     {
         $card = new Card('What is your name?', 'Peter');
