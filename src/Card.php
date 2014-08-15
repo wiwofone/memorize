@@ -40,11 +40,11 @@ class Card implements \JsonSerializable
             $nextTime = time();
         }
         
+        $this->question = $question;
+        $this->answer = $answer;
         $this->numberOfRepeats = $numberOfRepeats;
         $this->factor = $factor;
         $this->nextTime = $nextTime;
-        $this->question = $question;
-        $this->answer = $answer;
     }
     
     /**
@@ -194,9 +194,53 @@ class Card implements \JsonSerializable
         ];
     }
     
-    public static function fromJson()
+    /**
+     * toJson method for semantic purposes.
+     *
+     * @return String JSON encoded Card object
+     */
+    public function toJson()
     {
-        
+        return json_encode($this);
+    }
+    
+    /**
+     * Create Card from JSON encoded string.
+     *
+     * @param String $json
+     */
+    public static function fromJson($json)
+    {
+        $card = json_decode($json, true);
+        return new Card($card['question'],$card['answer'],$card['numberOfRepeats'],
+                            $card['factor'],$card['nextTime']);
+    }
+    
+    /**
+     * Convert the Card object to an array.
+     *
+     * @return Array Card object as array.
+     */
+    public function toArray()
+    {
+        return array(
+            'question'        => $this->question,
+            'answer'          => $this->answer,
+            'numberOfRepeats' => $this->numberOfRepeats,
+            'factor'          => $this->factor,
+            'nextTime'        => $this->nextTime
+        ); 
+    }
+    
+    /**
+     * Create card from array.
+     *
+     * @param Array $card
+     */
+    public static function fromArray(array $card)
+    {
+        return new Card($card['question'],$card['answer'],$card['numberOfRepeats'],
+                            $card['factor'],$card['nextTime']);
     }
 
 }
