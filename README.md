@@ -23,7 +23,7 @@ Memorize is installed through [Composer](http://getcomposer.org/doc/00-intro.md)
 ```
 
 ## The algorithm
-SM is a family of algorithms made popular by the SuperMemo software package. The Memorize class implements two parts of the [SM-2 algorithm](http://www.supermemo.com/english/ol/sm2.htm) in PHP: a method to calculate intervals in which an item should be repeated, and what E-factor the item should have after being answered with a certain quality.
+SM is a family of algorithms made popular by the SuperMemo software package. The Memorize class implements  the complete [SM-2 algorithm](http://www.supermemo.com/english/ol/sm2.htm) in PHP. The `SM2` class handles calculating repetition intervals and E-factors. The `Card` class handles flash cards and how many times they have been virtually repeated. Finally, the `Repeater` class handles actual repetition of a `CardQueue`, deciding which cards to repeat first and if they have been repeated successfully or not.
 
 ## Testing
 Run PHPUnit with `$ phpunit` in the root directory.
