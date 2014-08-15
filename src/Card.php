@@ -27,8 +27,8 @@ class Card implements \JsonSerializable
      * 
      * Creates a new flash card with either default or custom settings.
      * 
-     * @param String  $question            The card's current E-factor
-     * @param String  $answer              The next time the card should be repeated as UNIX timestamp
+     * @param String  $question            Flash card quesiton
+     * @param String  $answer              Flash card answer
      * @param int     $numberOfRepeats     How many times the card has been repeated
      * @param int     $factor              The card's current E-factor
      * @param int     $nextTime            The next time the card should be repeated as UNIX timestamp
@@ -50,6 +50,7 @@ class Card implements \JsonSerializable
     /**
      * Set flash card question
      * @param string $question
+     *
      * @return \Memorize\Card
      */
     public function setQuestion($question)
@@ -60,6 +61,7 @@ class Card implements \JsonSerializable
     
     /**
      * Get flash card question
+     *
      * @return string
      */
     public function getQuestion()
@@ -70,6 +72,7 @@ class Card implements \JsonSerializable
     /**
      * Set flash card answer
      * @param string $answer
+     *
      * @return \Memorize\Card
      */
     public function setAnswer($answer)
@@ -90,6 +93,7 @@ class Card implements \JsonSerializable
     /**
      * Set number of repetitions
      * @param int $numberOfRepeats
+     *
      * @return \Memorize\Card
      */
     public function setNumberOfRepeats($numberOfRepeats)
@@ -110,6 +114,8 @@ class Card implements \JsonSerializable
     /**
      * Set E-factor
      * @param float $factor
+     *
+     *
      * @return \Memorize\Card
      */
     public function setFactor($factor)
@@ -130,6 +136,7 @@ class Card implements \JsonSerializable
     /**
      * Set next repetition occurrence (UNIX timestamp)
      * @param int $nextTime
+     *
      * @return \Memorize\Card
      */
     public function setNextTime($nextTime)
@@ -153,7 +160,7 @@ class Card implements \JsonSerializable
      * This method takes an instance of SM2 and a quality factor to update
      * the flash card accordingly after a repetition.
      * 
-     * @param \Memorize\SM2 $memorize   An instance of an SM2 object
+     * @param \Memorize\SM2 $SM2        An instance of an SM2 object
      * @param int           $quality    The quality of the answer
      */
     public function repeat($SM2, $quality)
@@ -179,12 +186,17 @@ class Card implements \JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'question' => $this->question,
-            'answer' => $this->answer,
+            'question'        => $this->question,
+            'answer'          => $this->answer,
             'numberOfRepeats' => $this->numberOfRepeats,
-            'factor' => $this->factor,
-            'nextTime' => $this->nextTime
+            'factor'          => $this->factor,
+            'nextTime'        => $this->nextTime
         ];
+    }
+    
+    public static function fromJson()
+    {
+        
     }
 
 }
