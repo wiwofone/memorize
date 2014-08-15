@@ -27,7 +27,7 @@ class CardQueue extends \SplPriorityQueue
      */
     public function compare($priority1, $priority2)
     {
-        return $priority1 - $priority2;
+        return $priority2 - $priority1;
     }
     
     /**
@@ -39,7 +39,7 @@ class CardQueue extends \SplPriorityQueue
      * @param int $priority
      * @throws InvalidAgumentException when $card is not a Card
      */
-    public function insert($card, $priority) {
+    public function insert($card, $priority = null) {
         if (get_class($card) == 'Memorize\Card') {
             parent::insert($card, $card->getNextTime());
         } else {
