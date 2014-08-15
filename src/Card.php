@@ -27,12 +27,14 @@ class Card implements \JsonSerializable
      * 
      * Creates a new flash card with either default or custom settings.
      * 
-     * @param int  $numberOfRepeats   How many times the card has been repeated
-     * @param int  $factor            The card's current E-factor
-     * @param int  $nextTime          The next time the card should be repeated as UNIX timestamp
+     * @param String  $question            The card's current E-factor
+     * @param String  $answer              The next time the card should be repeated as UNIX timestamp
+     * @param int     $numberOfRepeats     How many times the card has been repeated
+     * @param int     $factor              The card's current E-factor
+     * @param int     $nextTime            The next time the card should be repeated as UNIX timestamp
      */
-    public function __construct($numberOfRepeats = 0, $factor = 2.5, $nextTime = null,
-                                    $question = null, $answer = null)
+    public function __construct($question = null, $answer = null, $numberOfRepeats = 0, 
+                                    $factor = 2.5, $nextTime = null)
     {
         if (is_null($nextTime)) {
             $nextTime = time();
